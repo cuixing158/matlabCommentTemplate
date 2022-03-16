@@ -13,7 +13,7 @@ First double-click directly on "header.mlappinstall" and then right-click on "Ad
 Type this on the command line:`edit header.m`,then modify it.<br>
 
 ## Examples
-Define the function or class file in your script(it is not necessary to define it completely, only the function prototype signature is needed), then press the shortcut **"alt" + "1"** or click the "header" header in the **"Quick Access Toolbar"** or type **`header`** In the command line window.<br>
+Define the function or class file in your script(it is not necessary to define it completely, only the function prototype signature is needed), then press the shortcut **"alt" + "1"** or click the "header" header in the **"Quick Access Toolbar"** or type **`header`** In the command line window.If you don't want to automatically insert comments in some functions or classes, you can ignore them by starting the line below the function or class signature with "%".<br>
 - function example
 ```matlab
 t = 1:.1:2*pi;
