@@ -7,7 +7,7 @@ First double-click directly on "header.mlappinstall" and then right-click on "Ad
 
 ## How to use
 1. Open the script m file you want to comment;<br>
-1. use the shortcut "alt" + "1" to insert comments for the function or class or type "header" in the command window.<br>
+1. use the shortcut "alt" + "1"  or click on the "header" icon in the Quick Access toolbar or type "header" in the command window.<br>
 
 ## How to modify the template to suit your needs?
 Type this on the command line:`edit header.m`,then modify it.<br>
