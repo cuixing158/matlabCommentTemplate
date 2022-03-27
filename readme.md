@@ -26,15 +26,15 @@ function out = myfun1(a,b,c)
 %    None
 % 
 % Syntax:  
-%     out=myfun1(a,b,c)
+%     out = myfun1(a,b,c)
 % 
 % Inputs:
-%    input1 - [m,n] size,[double] type,Description
-%    input2 - [m,n] size,[double] type,Description
-%    input3 - [m,n] size,[double] type,Description
+%    a - [m,n] size,[double] type,Description
+%    b - [m,n] size,[double] type,Description
+%    c - [m,n] size,[double] type,Description
 % 
 % Outputs:
-%    output1 - [m,n] size,[double] type,Description
+%    out - [m,n] size,[double] type,Description
 % 
 % Example: 
 %    None
@@ -43,7 +43,7 @@ function out = myfun1(a,b,c)
 
 % Author:                          yourname
 % Email:                           youremail@email.com
-% Created:                         13-Mar-2022
+% Created:                         27-Mar-2022 20:13:59
 % Version history revision notes:
 %                                  None
 % Implementation In Matlab R2022a
@@ -52,22 +52,26 @@ function out = myfun1(a,b,c)
 out = a+b+c;
 end 
 
-function out = myfun2(argument1,argument2,argument3,argument4,...
+function out = myfun2(argument1,argument2,...
+    argument3,argument4,...
     argument5,argument6)
 % Brief: One line description of what the function or class performs
 % Details:
 %    None
 % 
 % Syntax:  
-%     out=myfun2(argument1,argument2,argument3,argument4, argument5,argument6)
+%     out = myfun2(argument1,argument2,argument3,argument4,argument5,argument6)
 % 
 % Inputs:
-%    input1 - [m,n] size,[double] type,Description
-%    input2 - [m,n] size,[double] type,Description
-%    input3 - [m,n] size,[double] type,Description
+%    argument1 - [m,n] size,[double] type,Description
+%    argument2 - [m,n] size,[double] type,Description
+%    argument3 - [m,n] size,[double] type,Description
+%    argument4 - [m,n] size,[double] type,Description
+%    argument5 - [m,n] size,[double] type,Description
+%    argument6 - [m,n] size,[double] type,Description
 % 
 % Outputs:
-%    output1 - [m,n] size,[double] type,Description
+%    out - [m,n] size,[double] type,Description
 % 
 % Example: 
 %    None
@@ -76,13 +80,12 @@ function out = myfun2(argument1,argument2,argument3,argument4,...
 
 % Author:                          yourname
 % Email:                           youremail@email.com
-% Created:                         13-Mar-2022
+% Created:                         27-Mar-2022 20:13:59
 % Version history revision notes:
 %                                  None
 % Implementation In Matlab R2022a
 % Copyright © 2022 yourOrganization.All Rights Reserved.
 %
-
 out = argument1+argument2+argument3+argument4+argument5+argument6;
 end 
 ```
@@ -95,15 +98,13 @@ classdef Motor < ElectricVehicleComponent
 %    None
 % 
 % Syntax:  
-%     Motor<ElectricVehicleComponent
+%     Motor < ElectricVehicleComponent
 % 
 % Inputs:
-%    input1 - [m,n] size,[double] type,Description
-%    input2 - [m,n] size,[double] type,Description
-%    input3 - [m,n] size,[double] type,Description
+%    None
 % 
 % Outputs:
-%    output1 - [m,n] size,[double] type,Description
+%    None
 % 
 % Example: 
 %    None
@@ -112,7 +113,7 @@ classdef Motor < ElectricVehicleComponent
 
 % Author:                          yourname
 % Email:                           youremail@email.com
-% Created:                         13-Mar-2022
+% Created:                         27-Mar-2022 20:16:17
 % Version history revision notes:
 %                                  None
 % Implementation In Matlab R2022a
@@ -131,15 +132,14 @@ classdef Motor < ElectricVehicleComponent
 %    None
 % 
 % Syntax:  
-%     motor=start(motor,speed)
+%     motor = start(motor,speed)
 % 
 % Inputs:
-%    input1 - [m,n] size,[double] type,Description
-%    input2 - [m,n] size,[double] type,Description
-%    input3 - [m,n] size,[double] type,Description
+%    motor - [m,n] size,[double] type,Description
+%    speed - [m,n] size,[double] type,Description
 % 
 % Outputs:
-%    output1 - [m,n] size,[double] type,Description
+%    motor - [m,n] size,[double] type,Description
 % 
 % Example: 
 %    None
@@ -148,7 +148,7 @@ classdef Motor < ElectricVehicleComponent
 
 % Author:                          yourname
 % Email:                           youremail@email.com
-% Created:                         13-Mar-2022
+% Created:                         27-Mar-2022 20:16:17
 % Version history revision notes:
 %                                  None
 % Implementation In Matlab R2022a
@@ -171,15 +171,13 @@ classdef Motor < ElectricVehicleComponent
 %    None
 % 
 % Syntax:  
-%     motor=stop(motor)
+%     motor = stop(motor)
 % 
 % Inputs:
-%    input1 - [m,n] size,[double] type,Description
-%    input2 - [m,n] size,[double] type,Description
-%    input3 - [m,n] size,[double] type,Description
+%    motor - [m,n] size,[double] type,Description
 % 
 % Outputs:
-%    output1 - [m,n] size,[double] type,Description
+%    motor - [m,n] size,[double] type,Description
 % 
 % Example: 
 %    None
@@ -188,7 +186,7 @@ classdef Motor < ElectricVehicleComponent
 
 % Author:                          yourname
 % Email:                           youremail@email.com
-% Created:                         13-Mar-2022
+% Created:                         27-Mar-2022 20:16:17
 % Version history revision notes:
 %                                  None
 % Implementation In Matlab R2022a
