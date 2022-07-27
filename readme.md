@@ -1,3 +1,5 @@
+[![View matlabCommentTemplate on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/107879-matlabcommenttemplate)
+
 # Matlab functions and class comment template
 Easy to use m-file comment template! Custom/predefined comment modules for matlab functions and classes.<br>
 
