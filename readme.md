@@ -6,7 +6,7 @@ Easy to use m-file comment template! Custom/predefined comment modules for matla
 
 ## How to install
 
- double-click directly on "header.mlappinstall" or add "header.m" to your [MATLAB Search Path](https://www.mathworks.com/help/matlab/matlab_env/what-is-the-matlab-search-path.html).
+ double-click directly on ["MatlabCommentTemplate.mltbx"](https://github.com/cuixing158/matlabCommentTemplate/releases) or add "header.m" to your [MATLAB Search Path](https://www.mathworks.com/help/matlab/matlab_env/what-is-the-matlab-search-path.html).
 
 ## How to use
 1. Open the script m file you want to comment;<br>
