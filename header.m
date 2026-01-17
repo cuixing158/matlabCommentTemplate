@@ -1,11 +1,16 @@
 function header(authorName,emailAddress,CopyrightOrganization)
 % Brief: inserts predefined header template into the active script
-% Detials:
-%          None
+% Details:
+%    This function inserts a standardized header template into the active
+%    MATLAB script or function. It automatically parses the function or
+%    class signature to populate the Syntax, Inputs, and Outputs sections
+%    of the header. It also fills in author information and the creation
+%    date. If the file already has comments following the signature, the
+%    template insertion is skipped.
 %
 % Syntax:  header
 %
-%      call from command line whith the target script open and active
+%      call from command line with the target script open and active
 %      template will be inserted after the first line
 %
 %
@@ -16,7 +21,7 @@ function header(authorName,emailAddress,CopyrightOrganization)
 %
 %    notes: template is defined as character array in lines 99-125
 %    to change the template change the character array defined by
-%    headerTemplate={sprntf([...
+%    headerTemplate={sprintf([...
 %                       'template'),...
 %                       ]};
 %    the published version adds your contact information (same as in this
@@ -30,7 +35,7 @@ function header(authorName,emailAddress,CopyrightOrganization)
 %
 %
 % Outputs:
-%    no outpus
+%    no outputs
 
 %
 % See also: None
@@ -43,21 +48,21 @@ function header(authorName,emailAddress,CopyrightOrganization)
 % header format is adapted from:
 % J. Benjamin Kacerovsky (2022). insertTemplateHeader (https://www.mathworks.com/matlabcentral/fileexchange/79903-inserttemplateheader), MATLAB Central File Exchange. Retrieved March 13, 2022.
 
-% Author: cuixingxing
+% Author: xingxingcui
 % A matlab amateur, https://cuixing158.github.io/
 % Email: cuixingxing150@gmail.com
 % Created:                         13-Mar-2022
 % Version history revision notes:
-%                                  2022.3.16 Support ignoring comments on the next line of a function or class signature that starts with %
-%                                  2022.3.27 Support multiple signature
-%                                  lines and Input and output parameter names are explicitly obtained
+%     2022.3.16 Support ignoring comments on the next line of a function or class signature that starts with %
+%     2022.3.27 Support multiple signature lines and Input and output parameter names are explicitly obtained
+%
 % Implementation In Matlab R2022a
-% Copyright © 2022 cuixingxing.All Rights Reserved.
+% Copyright © 2022 xingxingcui.All Rights Reserved.
 %
 arguments
     authorName (1,:) char = "cuixingxing"
     emailAddress (1,:) char = "cuixingxing150@gmail.com"
-    CopyrightOrganization (1,:) char = "TheMatrix"
+    CopyrightOrganization (1,:) char = "xingxingcui"
 end
 
 % get current active script and convert text to cell array of lines
@@ -67,7 +72,7 @@ allOriLines=matlab.desktop.editor.textToLines(currentScript.Text);
 
 pat = ["function","classdef"];% support function and classdef
 cond1 = startsWith(strip(allOriLines,"left"),pat);
-cond2 = endsWith(allOriLines,'...');
+cond2 = endsWith(strip(allOriLines),'...');
 if any(cond1)
     idxMuls = find(cond1);
     numIdxs = length(idxMuls);
@@ -79,7 +84,7 @@ if any(cond1)
             while cond2(sigEndIdx)&&(sigEndIdx<length(cond2))% support multiple signature lines
                 sigEndIdx= sigEndIdx+1;
             end
-            signatures{i} = allOriLines(idxMuls(i):sigEndIdx); 
+            signatures{i} = allOriLines(idxMuls(i):sigEndIdx);
             idxSigs{i} = idxMuls(i):sigEndIdx;
         else
             signatures{i} = allOriLines(idxMuls(i));
@@ -138,7 +143,7 @@ for i = 1:numIdxs
         else
             currentSig = erase(currentSig,"classdef ");
         end
-        
+
         % create header template to be inserted
         % modify this string to change header template
         headerTemplate={sprintf([
@@ -168,7 +173,7 @@ for i = 1:numIdxs
             '%% Implementation In Matlab R%s\n',... % 7
             '%% Copyright © %s %s.All Rights Reserved.\n',...% 8,9
             '%%'], currentSig,inputStr,outputStr,authorName,emailAddress,...
-            datestr(now),version('-release'),string(year(datetime)),...
+            string(datetime('now','Format','dd-MMM-yyyy')),version('-release'),string(year(datetime)),...
             CopyrightOrganization)};% the current date is automatically added
     end
     % insert header template as the second cell in the array of text lines
@@ -180,7 +185,7 @@ if length(allOriLines)>endIdx
     allDstLines=[allDstLines;allOriLines(endIdx+1:end)];
 end
 
-% convert line array bback to text and update the text of the current
+% convert line array back to text and update the text of the current
 % active script
 allOriLines=matlab.desktop.editor.linesToText(allDstLines);
 currentScript.Text=allOriLines;
